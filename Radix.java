@@ -12,29 +12,33 @@ public class Radix {
         //Purpose: To get the length of the given int n.
         //Example: 21 would return 2, 5 would return 1.
         public static int getLength(int n) {
-            return String.valueOf(n).length();
+        	
+        	if(n >= 0)
+            {return String.valueOf(n).length();}
+        	
+        	else
+        	{return String.valueOf(n).length()-1;}
         }
 
 
         //Purpose: To calculate the length of the longest number in a vector of
+      //Purpose: To calculate the length of the longest number in a vector of
         //         natural numbers.
-    public static int getLargest(int[] n) {
-    	int index = 0;
-    	int greatest = 0;
-    	int N = n.length-1;
-    	
-    	//INV: 
-    	while(index <= N) {
-    		
-    	}
-    	
+    public static int getLargest(int[] n, int greatest, int index) {
+        if (index == -1) return greatest;
+        else if (greatest < getLength(n[index])) {
+            return getLargest(n, getLength(n[index]), index-1);
+        }
+        else return getLargest(n, greatest, index-1);
     }
+
+
     
     //to create a random array with a random size with random values
-    public static double[] randomArr() {
+ /*   public static double[] randomArr() {
     	
     	int index = 0;
-    	int[] arr = new int[]
+    	int[] arr = new int[];
     	double a = Math.random();
     	
     while(index <= a) {
@@ -43,11 +47,12 @@ public class Radix {
     	index++;
     }
     }
+    */
 
 
 public static void main(String[] args) {
 	
-		System.out.println(randomArr());
+	
 		
 		
 	}
