@@ -1,5 +1,7 @@
 package radixSort;
 
+import java.util.Arrays;
+
 public class Radix {
 
     //Purpose: To return the digit at the given index of the input number,
@@ -35,25 +37,25 @@ public class Radix {
 
     
     //to create a random array with a random size with random values
- /*   public static double[] randomArr() {
+   public static int[] randomArr() {
     	
     	int index = 0;
-    	int[] arr = new int[];
-    	double a = Math.random();
+    	int a = 10 + (int) (Math.random()*30);// just to get a decent sample size
+    	int[] arr = new int[a];
     	
-    while(index <= a) {
+    while(index <= (a - 1)) {
     	
-    	
+    	arr[index] = (int)Math.floor(Math.random()*100);
     	index++;
     }
+    return(arr);
     }
-    */
+    
 
 
 public static void main(String[] args) {
 	
-	
-		
+	System.out.println(Arrays.toString(randomArr()));
 		
 	}
 
