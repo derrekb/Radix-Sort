@@ -20,7 +20,8 @@ class Test {
 	    assertEquals(Radix.getLength(y1),1);
 	    assertEquals(Radix.getLargest(z,0,5),5);
 	    assertEquals(Radix.getLargest(z1,0,6),2);
-	    //assertEquals(Radix.getLargest(z2,0,0),0);  needs work
+	    //assertEquals(Radix.getLargest(z2,0,0),0);  needs to work with empty array
+	    assertEquals(Radix.getSmallest(z, 0, 5),1);
 	}
 
 }

@@ -51,6 +51,14 @@ public class Radix {
     return(arr);
     }
     
+   //purpose to get the smallest number in an array
+   public static int getSmallest(int[] n, int smallest, int index) {
+       if (index == -1) return smallest;
+       else if (smallest > getLength(n[index])) {
+           return getSmallest(n, getLength(n[index]), index-1);
+       }
+       else return getSmallest(n, smallest, index-1);
+   }
 
 
 public static void main(String[] args) {
