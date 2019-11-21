@@ -33,6 +33,19 @@ public class Radix {
         }
         else return getLargest(n, greatest, index-1);
     }
+	
+	 //Purpose: To calculate the length of the shortest number in a vector of
+//Purpose: To calculate the length of the shortest number in a vector of
+  //         natural numbers.
+public static int getSmallest(int[] n, int index) {
+	int accum = getLargest(n,0, n.length-1); 
+  if (index == -1) return accum;
+  else if (accum > getLength(n[index])) {
+      accum = getLength(n[index]);
+      return accum;
+  }
+  else return getSmallest(n, index-1);
+}
 
 
     
