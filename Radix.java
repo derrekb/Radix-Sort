@@ -1,4 +1,5 @@
-package RADIX_SORT;
+package radixSort;
+
 import java.util.Arrays;
 
 public class Radix {
@@ -54,9 +55,26 @@ public class Radix {
     	while(i<= largest+1) {
     		b.add(A, i);
     		b.toArray(A, index);
-    		b.CLEAR();
+    		//b.CLEAR();
     		i++;  	}
     	return A;   }
+   
+   //Purpose: To create a random array with a random size with random values
+   public static int[] randomArr() {
+		int index = 0;
+		int a = (int) (Math.random()*30);
+		// just to get a decent sample size
+		int[] arr = new int[a];	
+		while(index <= (a - 1)) {
+			arr[index] = (int)Math.floor(Math.random()*-1000);
+			index++;}
+			return(arr);}
+   
+   public static void main(String[] args) {
+		int a[] = randomArr();
+		System.out.println("This is the random array before sorting: " + Arrays.toString(a));
+		System.out.println("This is the random array after sorting: " + Arrays.toString(Radix.sort(a,0)));
+	}
    
      
 }
