@@ -1,6 +1,9 @@
 package RADIX_SORT;
 import java.util.Arrays;
 
+/**
+ * Class for Radix_Sort
+  */
 public class Radix {
 	//Purpose: To return the digit at the given index of the input number,
     //Effect: getDigit(1234, 1) would return 4, getDigit(1234, 2) would return 3
@@ -92,14 +95,28 @@ public class Radix {
     	 */
     	return A;      	  }
    
+   //Purpose: To generate a random Array with random size
    public static int[] randomArr() {
 		int index = 0;
 		int a = (int) (Math.random()*30);
-		// just to get a decent sample size
+		// To generate a decent sample size
 		int[] arr = new int[a];	
+		//To implement an array arr with size a
+		//Assumption: let y be the values of randomly generated integers
+		//INV: arr[index-1] && index = index
 		while(index <= (a - 1)) {
+			//INV: arr[index-1] && index = index
 			arr[index] = (int)Math.floor(Math.random()*-1000);
-			index++;}
+			//INV: arr[index] && index = index
+			index++;
+			//INV: arr[index-1] && index = index + 1
+			//which implies:
+			//INV: arr[index-1] && index = index
+		}
+		/**Termination Argument: index starts zero and increments each time
+		 * 						through the loop. Eventually index > a-1. And
+		 * 						the loop terminates
+		 */		
 			return(arr);}
    
    
