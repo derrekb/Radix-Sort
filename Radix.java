@@ -103,15 +103,15 @@ public class Radix {
 		int[] arr = new int[a];	
 		//To implement an array arr with size a
 		//Assumption: let y be the values of randomly generated integers
-		//INV: arr[index-1] && index = index
+		//INV: arr[0...index-1] && index = index
 		while(index <= (a - 1)) {
-			//INV: arr[index-1] && index = index
+			//INV: arr[0....index-1] && index = index
 			arr[index] = (int)Math.floor(Math.random()*-1000);
-			//INV: arr[index] && index = index
+			//INV: arr[0....index] && index = index
 			index++;
-			//INV: arr[index-1] && index = index + 1
+			//INV: arr[0....index-1] && index = index + 1
 			//which implies:
-			//INV: arr[index-1] && index = index
+			//INV: arr[0....index-1] && index = index
 		}
 		/**Termination Argument: index starts zero and increments each time
 		 * 						through the loop. Eventually index > a-1. And
