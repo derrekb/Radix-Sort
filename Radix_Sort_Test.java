@@ -9,29 +9,39 @@ import org.junit.jupiter.api.Test;
 class Radix_Sort_Test {
 
 	@Test
-	void Radix() {
-		int x= 1234;
-	    int[] z= {225,450,666,777,1295869};
-	    int[] a = {43,657,2,543,2355,240};
-	    int[] b = {2,43,240,543,657,2355};
-	    int[] mt = {};
-	    int[] same = {2,2,2,2,2};
-	    int[] e = {-42,-2,-342,-642,-232};
-	    int[] f = {-642,-342,-232,-42,-2};
-	    int[] c = {2,43,657,-240,-923,-543,2355,10,-10}; 
-	    int[] d = {-923,-543,-240,-10,2,10,43,657,2355};
-	   
-	    
-	    assertEquals(Radix.nthDigit(x,1), 4 );
-	    assertEquals(Radix.getLength(9),1);
-	    assertEquals(Radix.getLargest(z,4),7);
-	    assertEquals(Radix.getSmallest(a,5),1);
-	    assertEquals(Arrays.equals(Radix.sort(a,0), b), true);
-	    assertEquals(Arrays.equals(Radix.sort(mt,0), mt), true);
-	    assertEquals(Arrays.equals(Radix.sort(same, 0), same),true);
-	    assertEquals(Arrays.equals(Radix.sort(c, 0), d), true);
-	    assertEquals(Arrays.equals(Radix.sort(e, 0), f), true);
-	   	     }
+	  void Radix() {
+        int x= 1234;
+        int x1 = -123456780;
+        int[] z= {225,450,666,777,1295869};
+        int[] a = {43,657,2,543,2355,240};
+        int[] b = {2,43,240,543,657,2355};
+        int[] mt = {};
+        int[] same = {2,2,2,2,2};
+        int[] e = {-42,-2,-342,-642,-232};
+        int[] f = {-642,-342,-232,-42,-2};
+        int[] c = {2,43,657,-240,-923,-543,2355,10,-10}; 
+        int[] d = {-923,-543,-240,-10,2,10,43,657,2355};
+        int[] g = {-5,-2,0,3,78,234,2445};
+
+
+        assertEquals(Radix.nthDigit(x,1), 4 );
+        assertEquals(Radix.nthDigit(x1,3),-8);
+        assertEquals(Radix.nthDigit(x1,1),100);
+        assertEquals(Radix.getLength(9),1);
+        assertEquals(Radix.getLength(999),3);
+        assertEquals(Radix.getLength(-9),1);
+        assertEquals(Radix.getLargest(z,4),7);
+        assertEquals(Radix.getLargest(d,6),2);
+        assertEquals(Radix.getSmallest(a,5),1);
+        assertEquals(Radix.getSmallest(d,1),1);
+        assertEquals(Arrays.equals(Radix.sort(a,0), b), true);
+        assertEquals(Arrays.equals(Radix.sort(mt,0), mt), true);
+        assertEquals(Arrays.equals(Radix.sort(same,0), same),true);
+        assertEquals(Arrays.equals(Radix.sort(c,0), d), true);
+        assertEquals(Arrays.equals(Radix.sort(e,0), f), true);
+        assertEquals(Arrays.equals(Radix.sort(g,0), g), true);
+
+                }
 	
 	@Test
 	void Bucket() {
